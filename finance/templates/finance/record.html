@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "finance/base.html" %}
+{% block header %}
+    <h1>Records</h1>
+{% endblock header %}
+<body>
+
+    {% block content %}
+        <p>Income</p>
+        <ul>
+            {% for singleIncome in income %}
+                <li>
+                    <a href="{% url 'finance:income' singleIncome.id %}">{{singleIncome}}</a>
+                </li>
+            {% empty %}
+                <li>No income have been added yet.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'finance:new_income' %}">Add a new income record</a>
+
+        <p>Expense</p>
+        <ul>
+            {% for singleExpense in expense %}
+                <li><a href="{% url 'finance:expense' singleExpense.id %}">{{singleExpense}}</a></li>
+            {% empty %}
+                <li>No expense have been added yet.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'finance:new_expense' %}">Add a new expense record</a>
+    {% endblock content %}
+</body>
+</html>

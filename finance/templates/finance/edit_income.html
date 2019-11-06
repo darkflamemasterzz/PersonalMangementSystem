@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends "finance/base.html" %}
+
+    {% block content %}
+        <p>Edit income record:</p>
+
+        <form action="{% url 'finance:edit_income' income.id %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit">save change</button>
+        </form>
+    {% endblock content %}
+</body>
+</html>

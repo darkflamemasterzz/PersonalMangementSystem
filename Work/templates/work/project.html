@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends "work/base.html" %}
+
+        'project': project,
+        'isDone': isDone,
+        'range': range,
+        'bodyText': bodyText,
+        'startTime': startTime,
+        'job': job,
+    {% block content %}
+        <p>Project: {{ project }}</p>
+        <p>isDone: {{ isDone }}</p>
+        <p>range: {{range}}</p>
+        <p>bodyText: {{bodyText}}</p>
+        <p>startTime: {{startTime}}</p>
+        <p>job: {{job}}</p>
+    {% endblock content %}
+</body>
+</html>

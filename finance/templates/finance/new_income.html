@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new income record</title>
+</head>
+<body>
+    {% extends "finance/base.html" %}
+    {% load bootstrap3 %}
+
+    {% block header %}
+        <h2>Add a new income record: </h2>
+    {% endblock header %}
+
+    {% block content %}
+        <form action="{% url 'finance:new_income' %}" method="post"
+              class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            {% buttons %}
+                <button name="submit" class="btn btn-primary">add income record</button>
+            {% endbuttons %}
+        </form>
+    {% endblock content %}
+</body>
+</html>

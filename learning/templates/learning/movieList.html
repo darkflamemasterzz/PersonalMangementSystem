@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "learning/base.html" %}
+{% block header %}
+    <h1>Movies</h1>
+{% endblock header %}
+<body>
+    {% block content %}
+        <p>Movie List</p>
+        <ul>
+            {% for movie in movies %}
+                <li>
+                    <a href="{% url 'learning:movie' movie.id %}">{{ movie }}</a>
+                </li>
+            {% empty %}
+                <li>No movie have been added yet.</li>
+            {% endfor %}
+        </ul>
+    {% endblock content %}
+</body>
+</html>

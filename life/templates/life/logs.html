@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "life/base.html" %}
+    {% block header %}
+        <h1>Logs</h1>
+    {% endblock header %}
+<body>
+    {% block content %}
+        <p>Log List</p>
+        <ul>
+            {% for log in logs %}
+                <li>
+                    <a href="{% url 'life:log' log.id %}">{{log}}</a>
+                </li>
+            {% empty %}
+                <li>No log have been added yet.</li>
+            {% endfor %}
+        </ul>
+    {% endblock content %}
+</body>
+</html>

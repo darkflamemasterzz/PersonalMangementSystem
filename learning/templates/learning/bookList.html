@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "learning/base.html" %}
+{% block header %}
+    <h1>Books</h1>
+{% endblock header %}
+<body>
+
+    {% block content %}
+        <p>Book List</p>
+        <ul>
+            {% for book in books %}
+                <li>
+                    <a href="{% url 'learning:book' book.id %}">{{book}}</a>
+                </li>
+            {% empty %}
+                <li>No book have been added yet.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'learning:new_book' %}">Add a new book</a>
+    {% endblock content %}
+</body>
+</html>

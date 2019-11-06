@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new expense record</title>
+</head>
+<body>
+    {% extends "finance/base.html" %}
+    {% load bootstrap3 %}
+
+    {% block header %}
+        <h2>Add a new expense record:</h2>
+    {% endblock header %}
+
+    {% block content %}
+        <form action="{% url 'finance:new_expense' %}" method="post"
+              class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button name="submit" class="btn btn-primary">add expense record</button>
+            {% endbuttons %}
+        </form>
+    {% endblock content %}
+</body>
+</html>

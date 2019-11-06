@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends "learning/base.html" %}
+
+    {% block content %}
+        <p>Title: {{ book }}</p>
+        <p>Author: {{ author }}</p>
+        <p>Field: {{ field }}</p>
+        <p>Description {{ description }}</p>
+        <p>Progress: {{ progress }}</p>
+    {% endblock content %}
+</body>
+</html>

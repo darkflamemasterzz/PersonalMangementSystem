@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job</title>
+</head>
+<body>
+    {% extends "work/base.html" %}
+
+    {% block content %}
+        <p>Job: {{ job }}</p>
+        <p>Description: {{ description }}</p>
+        <p>Project List</p>
+        <ul>
+            {% for project in projects %}
+                <li>
+                    <a href="{% url 'work:project' project.id %}">{{project}}</a>
+                </li>
+            {% empty %}
+                <li>No project have been added yet.</li>
+            {% endfor %}
+        </ul>
+    {% endblock content %}
+</body>
+</html>
